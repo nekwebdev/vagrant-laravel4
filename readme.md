@@ -1,10 +1,15 @@
 # What you get
 
 Apache 2 running on port 80 of 192.168.168.160, you can change the ip in the `Vagrantfile`
+
 PHP5.4 with MCrypt
+
 MySQL running on port 3306 of 192.168.168.160
+
 MySQL `root` user with a password of `root`
+
 MySQL `vagrant` user with a password of `vagrant` that has all privileges on a database named `vagrant`
+
 SMTP service with python that will act as a catch all for transactional email testing
 
 # Configuration
@@ -13,7 +18,7 @@ SMTP service with python that will act as a catch all for transactional email te
 
 Navigate in your terminal to the folder where you would like your project to reside and run:
 
-    git clone https://github.com/nekwebdev/vagrant-phpdev.git project-name
+    git clone https://github.com/nekwebdev/vagrant-laravel4.git project-name
 
 This will create a folder with the needed files for the Vagrant VM.
 
