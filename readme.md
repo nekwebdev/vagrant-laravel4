@@ -33,8 +33,12 @@ We have now cloned our starter Laravel 4 site in the www folder of our project f
 
 This will take some time. It will first download a base virtual box of Debian 7.0 RC1 made by the folks at PuppetLabs, so nothing shady there. Then the script `/shell/bootstrap.sh` will run. It will make sure the package manager is updated and that git is installed. It will install [librarian-puppet-maestrodev](https://github.com/maestrodev/librarian-puppet) which will act just like composer for your puppet modules. Really nice. It will then load the modules and apply puppet.
 
+Now is time to ssh into our virtual machine and run the Starter site install script. It will basically run the composer and artisan commands for you.
+
     vagrant ssh
-    boot-starter
+    ./boot-starter.sh
+
+
 
 ## Other PHP projects
 
