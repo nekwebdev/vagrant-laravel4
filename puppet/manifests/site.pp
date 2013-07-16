@@ -5,7 +5,8 @@
 file { '.bashrc':
     path    => '/home/vagrant/.bashrc',
     ensure  => file,
-    source  => "/vagrant/puppet/files/.bashrc"
+    source  => "/vagrant/puppet/files/.bashrc",
+    owner   => "vagrant",
 }
 
 # class {'locales':
@@ -25,8 +26,8 @@ class { 'apache':
 
 # Configure the default vhost
 apache::vhost { 'default':
-    #default_vhost => true,
-    ip => $::ipaddress,
+    default_vhost => true,
+    #ip => '192.168.168.160',
     port => '80',
     docroot     => '/vagrant/www/public',
     directories => [ { path => '/vagrant/www/public/', allow_override => ['All'] } ],
@@ -37,9 +38,6 @@ apache::mod { 'rewrite': }
 
 # Enable php for apache
 class { 'apache::mod::php': }
-
-# Enable more php modules
-php::module { "curl": }
 
 # Provision MySQL server and client
 class { 'mysql::server':
@@ -76,20 +74,30 @@ package { 'php5-mcrypt':
 # Make sure this line is in your $env array:
 # 'vagrant' => array('vagrant'),
 # This will make Laravel 4 use the following 3 configuration files
-file { 'app.php':
-    path    => '/home/vagrant/www/app/config/vagrant',
-    ensure  => file,
-    source  => "/vagrant/puppet/files/laravel4-config/app.php"
+file{'/vagrant/www/app/config/vagrant':
+    ensure => directory,
 }
-file { 'database.php':
-    path    => '/home/vagrant/www/app/config/vagrant',
+
+file { '/vagrant/www/app/config/vagrant/app.php':
     ensure  => file,
-    source  => "/vagrant/puppet/files/laravel4-config/database.php"
+    source  => "/vagrant/puppet/files/laravel4-config/app.php",
 }
-file { 'mail.php':
-    path    => '/home/vagrant/www/app/config/vagrant',
+
+file { '/vagrant/www/app/config/vagrant/database.php':
     ensure  => file,
-    source  => "/vagrant/puppet/files/laravel4-config/mail.php"
+    source  => "/vagrant/puppet/files/laravel4-config/database.php",
+}
+
+file { '/vagrant/www/app/config/vagrant/mail.php':
+    ensure  => file,
+    source  => "/vagrant/puppet/files/laravel4-config/mail.php",
+}
+
+file { '/home/vagrant/boot-starter':
+    ensure  => file,
+    source  => "/vagrant/puppet/files/boot-starter",
+    owner   => "vagrant",
+    mode    => "o+x",
 }
 
 

@@ -10,8 +10,8 @@ $localip = "192.168.168.160"
 
 Vagrant.configure("2") do |config|
     # Basics.
-    config.vm.box     = "debian-70rc1-x64-puppetlabs-nocm"
-    config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-70rc1-x64-vbox4210-nocm.box"
+    config.vm.box     = "debian70-rc1-puppetlabs"
+    config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-70rc1-x64-vbox4210.box"
 
     # Networking.
     config.vm.hostname = $hostname
