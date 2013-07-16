@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+
+# Vagrant
+.vagrant/
+
+# Puppet
+puppet/.tmp/
+puppet/modules/
+puppet/.librarian/
+puppet/Puppetfile.lock
+
+# Web Project folder
+www/
