@@ -1,0 +1,31 @@
+forge "http://forge.puppetlabs.com"
+
+# mod 'puppetlabs/stdlib'
+
+# mod 'ntp',
+#   :git => 'git://github.com/puppetlabs/puppetlabs-ntp.git'
+
+# mod 'apt',
+#   :git => 'https://github.com/puppetlabs/puppetlabs-apt.git',
+#   :ref => 'feature/master/dans_refactor'
+
+#mod 'apt',
+#	:git => 'git://github.com/puppetlabs/puppetlabs-apt.git'
+
+#mod 'php',
+#	:git => 'git://github.com/example42/puppet-php.git'
+
+#mod 'php',
+#	:git => 'git://github.com/saz/puppet-php.git'
+
+mod 'apache',
+	:git => 'git://github.com/puppetlabs/puppetlabs-apache.git'
+
+mod 'mysql',
+	:git => 'git://github.com/puppetlabs/puppetlabs-mysql.git'
+
+#mod 'locales',
+#	:git => 'git://github.com/saz/puppet-locales.git'
+
+mod 'locales',
+	:git => 'git://github.com/attachmentgenie/puppet-module-locales.git'
