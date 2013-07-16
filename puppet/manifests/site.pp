@@ -93,30 +93,10 @@ file { '/vagrant/www/app/config/vagrant/mail.php':
     source  => "/vagrant/puppet/files/laravel4-config/mail.php",
 }
 
-file { '/home/vagrant/boot-starter':
+# Script to run composer and artisan
+file { '/home/vagrant/boot-starter.sh':
     ensure  => file,
-    source  => "/vagrant/puppet/files/boot-starter",
+    source  => "/vagrant/puppet/files/boot-starter.sh",
     owner   => "vagrant",
-    mode    => "o+x",
+    mode    => "u+x",
 }
-
-
-# Provision PHP
-# class { 'php': }
-# include php::apache2
-# Install PHP modules
-# php::module { 'mcrypt': }
-# php::module { 'mysql': }
-# php::module { "pear": }
-# php::module { "dev": }
-# php::module { "apc": }
-# php::module { "gd": }
-# php::module { "curl": }
-# php::module { "libapache2-mod-php5": }
-
-# file { "/vagrant/www/app/storage":
-#     recurse => true,
-#     owner => "vagrant",
-#     group => "www-data",
-#     mode     => 2775,
-# }
