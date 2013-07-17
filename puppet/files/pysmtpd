@@ -1,0 +1,7 @@
+#!/bin/sh
+echo ''
+echo 'Starting Python SMTP daemon...'
+echo 'Listening to port 2525'
+echo 'Outgoing emails will display in this session'
+echo 'Ctrl-C to quit'
+sudo python -m smtpd -n -c DebuggingServer localhost:2525

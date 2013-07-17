@@ -100,3 +100,9 @@ file { '/home/vagrant/boot-starter.sh':
     owner   => "vagrant",
     mode    => "u+x",
 }
+# Script to run the python smtp server
+file { '/usr/local/bin/pysmtpd':
+    ensure  => file,
+    source  => "/vagrant/puppet/files/pysmtpd",
+    mode    => "u+x",
+}
